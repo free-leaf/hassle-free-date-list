@@ -5,3 +5,4 @@ setting_data/
 *.code-workspace
 uploads/
 hassle-free-date-list/
+.vscode/sftp.json
