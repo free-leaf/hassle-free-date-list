@@ -1,0 +1,362 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+@import './common.scss';
+
+:root {
+	--date-color     : inherit;
+	--date-bg-color  : transparent;
+	--time-color     : inherit;
+	--time-bg-color  : transparent;
+	--closed-text    : 'Closed';
+	--closed-color   : #fff;
+	--closed-bg-color: #ff0000;
+	--full-text      : 'Full';
+	--full-color     : #fff;
+	--full-bg-color  : #ff0000;
+}
+
+.hfdl-schedule {
+	display       : flex;
+	flex-direction: column;
+
+	&.is-align-center {
+		align-items: center;
+		text-align : center;
+
+		.hfdl-schedule__item {
+			justify-content: center;
+		}
+	}
+
+	&.is-align-left {
+		align-items: flex-start;
+		text-align : left;
+
+		.hfdl-schedule__item {
+			justify-content: left;
+		}
+	}
+
+	&.is-align-right {
+		align-items: flex-end;
+		text-align : right;
+
+		.hfdl-schedule__item {
+			justify-content: right;
+		}
+	}
+
+	@include mq('tab-max') {
+		&.is-time-1row {
+			.hfdl-schedule__item {
+				flex-direction: column;
+			}
+
+			&.is-align-center {
+				.hfdl-schedule__item {
+					align-items: center;
+				}
+
+				.hfdl-schedule__times {
+					justify-content: center;
+				}
+			}
+
+			&.is-align-right {
+				.hfdl-schedule__item {
+					align-items: end;
+				}
+
+				.hfdl-schedule__times {
+					justify-content: flex-end;
+				}
+			}
+
+			.hfdl-schedule__times {
+				flex-direction: row;
+			}
+		}
+	}
+
+	&.is-time-2row,
+	&.is-time-rows {
+		.hfdl-schedule__item {
+			flex-direction: column;
+		}
+	}
+
+	// 時間を日付の下に横並びで表示
+	&.is-time-2row {
+		&.is-align-center {
+			.hfdl-schedule__item {
+				align-items: center;
+			}
+
+			.hfdl-schedule__times {
+				justify-content: center;
+			}
+		}
+
+		&.is-align-right {
+			.hfdl-schedule__item {
+				align-items: end;
+			}
+
+			.hfdl-schedule__times {
+				justify-content: flex-end;
+			}
+		}
+
+		.hfdl-schedule__times {
+			flex-direction: row;
+		}
+	}
+
+	// 時間を縦に並べて表示
+	&.is-time-rows {
+		.hfdl-schedule__times {
+			flex-direction: column;
+			width         : 100%;
+		}
+
+		.hfdl-schedule__time {
+			margin-right: 0;
+		}
+
+		&.is-align-left {
+			.hfdl-schedule__times {
+				align-items: flex-start;
+			}
+		}
+
+		&.is-align-center {
+			.hfdl-schedule__times {
+				align-items: center;
+			}
+		}
+
+		&.is-align-right {
+			.hfdl-schedule__times {
+				align-items: flex-end;
+			}
+		}
+	}
+
+}
+
+.hfdl-schedule.is-item-col {
+
+	// 縦に並べるのはタブレット以上の場合のみ
+	@include mq('tab') {
+		flex-direction: row;
+		flex          : 1 1 100%;
+		align-items   : flex-start;
+
+		>div+div {
+			margin-left: 0.8em;
+		}
+
+		.hfdl-schedule__item {
+			flex-direction: column;
+			flex-basis    : 100%;
+		}
+
+		.hfdl-schedule__date {
+			width: 100%;
+		}
+
+		&.is-align-center {
+			justify-content: center;
+			align-items    : flex-start;
+
+			&.is-time-rows {
+				.hfdl-schedule__times {
+					width      : 100%;
+					align-items: center;
+				}
+			}
+		}
+
+		&.is-align-left {
+			justify-content: flex-start;
+			align-items    : flex-start;
+
+			&.is-time-rows {
+				.hfdl-schedule__times {
+					width      : 100%;
+					align-items: flex-start;
+				}
+			}
+
+		}
+
+		&.is-align-right {
+			justify-content: flex-end;
+			align-items    : flex-start;
+
+			&.is-time-rows {
+				.hfdl-schedule__times {
+					width      : 100%;
+					align-items: flex-end;
+				}
+			}
+
+		}
+
+		&.is-time-rows {
+			.hfdl-schedule__item {
+				flex-basis: auto;
+			}
+
+			.hfdl-schedule__date {
+				width: auto;
+			}
+
+			.hfdl-schedule__times {
+				flex-direction: column;
+			}
+		}
+	}
+
+}
+
+
+.hfdl-schedule__item {
+	display      : flex;
+	align-items  : baseline;
+	margin-bottom: 1.5em;
+	position     : relative;
+
+}
+
+.hfdl-schedule__date {
+	margin-right    : 10px;
+	color           : var(--date-color);
+	background-color: var(--date-bg-color);
+	white-space     : nowrap;
+	position        : relative;
+
+	.has-date-bg-color & {
+		padding      : 0.1em 0.8em;
+		border-radius: 10px;
+		margin-bottom: 0.5em;
+	}
+
+	.is-bold-date-on & {
+		font-weight: 700;
+	}
+}
+
+.hfdl-schedule__times {
+	display  : flex;
+	flex-wrap: wrap;
+}
+
+.hfdl-schedule__time {
+	margin-right    : 10px;
+	line-height     : 1.4;
+	color           : var(--time-color);
+	background-color: var(--time-bg-color);
+	white-space     : nowrap;
+	position        : relative;
+
+	.has-time-bg-color & {
+		padding      : 0.1em 0.8em;
+		border-radius: 10px;
+		margin-bottom: 0.5em;
+	}
+}
+
+.is-closed-strikethrough {
+	.hfdl-schedule__item.is-closed {
+		text-decoration: line-through;
+
+		.hfdl-schedule__time {
+			text-decoration: line-through;
+		}
+	}
+
+}
+
+.is-closed-text {
+	.hfdl-schedule__item.is-closed {
+		text-decoration: none;
+
+		.hfdl-schedule__date::after {
+			@include note_label();
+			content         : var(--closed-text);
+			color           : var(--closed-color);
+			background-color: var(--closed-bg-color);
+		}
+
+		.hfdl-schedule__time {
+			&::after {
+				content: none;
+			}
+		}
+	}
+
+}
+
+.is-full-strikethrough {
+	.hfdl-schedule__item-reserved {
+		text-decoration: line-through;
+
+		.hfdl-schedule__time {
+			text-decoration: line-through;
+		}
+	}
+
+	.hfdl-schedule__time-reserved {
+		text-decoration: line-through;
+	}
+}
+
+.is-full-text {
+
+	.hfdl-schedule__item-reserved {
+		.hfdl-schedule__date::after {
+			@include note_label();
+			content         : var(--full-text);
+			color           : var(--full-color);
+			background-color: var(--full-bg-color);
+		}
+
+		.hfdl-schedule__time-reserved {
+			&::after {
+				content: none;
+			}
+		}
+	}
+
+	.hfdl-schedule__time-reserved {
+		text-decoration: none;
+
+		&::after {
+			@include note_label();
+			content         : var(--full-text);
+			color           : var(--full-color);
+			background-color: var(--full-bg-color);
+		}
+	}
+}
+
+.is-large-number-on {
+	.hfdl-large-number {
+		font-size: 1.3em;
+	}
+}
+
+.is-large-time-on {
+	.hour-font-size {
+		font-size: 1.3em;
+	}
+
+	.min-font-size {
+		font-size: 1.1em;
+	}
+}

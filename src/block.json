@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "hassle-free-date-list/date-list",
+	"version": "1.0.0",
+	"title": "Date List",
+	"category": "widgets",
+	"icon": "calendar-alt",
+	"description": "Insert hassle-free date list",
+	"textdomain": "hassle-free-date-list",
+	"supports": {
+		"anchor": true
+	},
+	"editorScript": "file:../build/index.js",
+	"editorStyle": "file:../build/index.css",
+	"style": "file:../build/style-index.css"
+}

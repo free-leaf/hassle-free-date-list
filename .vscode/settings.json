@@ -1,0 +1,28 @@
+{
+	"editor.tabSize": 4,
+	"files.eol": "\n",
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"phpcs.standard": "WordPress",
+	"phpcbf.standard": "WordPress",
+	"phpcbf.onsave": false,
+	"[html]": {
+		"editor.formatOnSave": true,
+	},
+	"[css]": {
+		"editor.formatOnSave": true,
+	},
+	"[scss]": {
+		"editor.formatOnSave": true,
+	},
+	"[javascript]": {
+		"editor.formatOnSave": true,
+	},
+	"[json]": {
+		"editor.formatOnSave": true,
+	},
+	"[php]": {
+		"editor.defaultFormatter": null,
+		"editor.formatOnSave": false,
+	},
+}

@@ -1,0 +1,27 @@
+$breakpoints: ('sp': 'screen and (min-width: 482px)',
+	'sp-max': 'screen and (max-width: 483px)',
+	'tab': 'screen and (min-width: 599px)',
+	'tab-max': 'screen and (max-width: 600px)',
+	'pc-min': 'screen and (min-width: 1024px)',
+	'pc-max': 'screen and (max-width: 1024px)',
+) !default;
+
+@mixin mq($breakpoint: pc) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+@mixin note_label() {
+	min-width  : 100%;
+	position   : absolute;
+	left       : 50%;
+	top        : 50%;
+	transform  : translate(-50%, -50%) rotate(-10deg);
+	padding    : 0.3em;
+	text-align : center;
+	font-size  : 0.7em;
+	font-weight: bold;
+	line-height: 1;
+	opacity    : 0.9;
+}

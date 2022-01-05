@@ -1,0 +1,171 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+.wrap_aus_setting {
+	display  : flex;
+	flex-wrap: wrap;
+}
+
+.schedule-date-column {
+	width: 200px;
+}
+
+.form_area {
+	margin-right: 20px;
+}
+
+.form_area table {
+	width: auto;
+}
+
+.note {
+	max-width: 300px;
+}
+
+.note ul {
+	list-style : disc;
+	margin-left: 20px;
+}
+
+/**
+* タブ表示用のCSS
+* @link:https://copypet.jp/1027/
+*/
+.cp_tab *,
+.cp_tab *:before,
+.cp_tab *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing        : border-box;
+}
+
+.cp_tab {
+	margin: 1em auto;
+}
+
+.cp_tab>input[type='radio'] {
+	margin            : 0;
+	padding           : 0;
+	border            : none;
+	border-radius     : 0;
+	outline           : none;
+	background        : none;
+	-webkit-appearance: none;
+	appearance        : none;
+	display           : none;
+}
+
+.cp_tab .cp_tabpanel {
+	display: none;
+}
+
+.cp_tab>input:first-child:checked~.cp_tabpanels>.cp_tabpanel:first-child,
+.cp_tab>input:nth-child(3):checked~.cp_tabpanels>.cp_tabpanel:nth-child(2),
+.cp_tab>input:nth-child(5):checked~.cp_tabpanels>.cp_tabpanel:nth-child(3),
+.cp_tab>input:nth-child(7):checked~.cp_tabpanels>.cp_tabpanel:nth-child(4),
+.cp_tab>input:nth-child(9):checked~.cp_tabpanels>.cp_tabpanel:nth-child(5),
+.cp_tab>input:nth-child(11):checked~.cp_tabpanels>.cp_tabpanel:nth-child(6),
+.cp_tab>input:nth-child(13):checked~.cp_tabpanels>.cp_tabpanel:nth-child(7),
+.cp_tab>input:nth-child(15):checked~.cp_tabpanels>.cp_tabpanel:nth-child(8),
+.cp_tab>input:nth-child(17):checked~.cp_tabpanels>.cp_tabpanel:nth-child(9),
+.cp_tab>input:nth-child(19):checked~.cp_tabpanels>.cp_tabpanel:nth-child(10),
+.cp_tab>input:nth-child(21):checked~.cp_tabpanels>.cp_tabpanel:nth-child(11),
+.cp_tab>input:nth-child(23):checked~.cp_tabpanels>.cp_tabpanel:nth-child(12),
+.cp_tab>input:nth-child(25):checked~.cp_tabpanels>.cp_tabpanel:nth-child(13) {
+	display: block;
+}
+
+.cp_tab>label {
+	position     : relative;
+	display      : inline-block;
+	padding      : 15px;
+	cursor       : pointer;
+	border       : 1px solid transparent;
+	border-bottom: 0;
+}
+
+.cp_tab>label:hover,
+.cp_tab>input:focus+label {
+	color: #0066cc;
+}
+
+.cp_tab>input:checked+label {
+	margin-bottom   : -1px;
+	border-color    : #cccccc;
+	border-bottom   : 1px solid #f9f9f9;
+	/*背景色と同じ*/
+	border-radius   : 5px 5px 0 0;
+	background-color: #f9f9f9;
+}
+
+.cp_tab .cp_tabpanel {
+	padding   : 0.5em 1em;
+	border-top: 1px solid #cccccc;
+}
+
+@media (max-width: 1300px) {
+	.cp_tab>label {
+		padding: 10px 9px;
+	}
+}
+
+@media (max-width: 480px) {
+	.cp_tab {
+		width    : 100%;
+		font-size: 0.8em;
+	}
+
+	.cp_tab label {
+		padding: 0.5em;
+	}
+}
+
+.cp_tabpanels {
+	background-color: #f9f9f9;
+	border          : 1px solid #ccc;
+	border-top      : none;
+	border-radius   : 0 0 5px 5px;
+}
+
+fieldset.schedule_design {
+	padding      : 5px 20px 15px;
+	margin-top   : 15px;
+	border       : 1px solid #ccc;
+	border-radius: 10px;
+}
+
+.aus_shortcode {
+	display: block;
+	margin : 2px 0;
+}
+
+.aus_shortcode>input {
+	background: inherit;
+	color     : inherit;
+	font-size : 14px;
+	border    : none;
+	box-shadow: none;
+	padding   : 8px 8px 6px;
+	margin    : 0;
+}
+
+.day-name-list {
+	table-layout: fixed;
+}
+
+.day-name-list th {
+	width         : auto;
+	padding       : 5px 10px 5px 0;
+	vertical-align: middle;
+}
+
+.day-name-list td {
+	padding: 5px 10px;
+}
+
+.form-table td fieldset p.hfdl-note {
+	margin-top   : 5px;
+	margin-bottom: 20px;
+	opacity      : 0.7;
+	font-size    : 0.9em;
+}

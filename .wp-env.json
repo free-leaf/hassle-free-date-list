@@ -1,0 +1,12 @@
+{
+	"themes": [
+		"../../wp-theme/tane"
+	],
+	"plugins": [
+		".",
+		"https://downloads.wordpress.org/plugin/contact-form-7.5.5.3.zip",
+		"https://downloads.wordpress.org/plugin/wp-multibyte-patch.2.9.zip",
+		"https://downloads.wordpress.org/plugin/debug-bar.1.1.2.zip"
+	],
+	"phpVersion": "7.4"
+}
